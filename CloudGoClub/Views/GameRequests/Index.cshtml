@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CloudGoClub.Models.GameRequest>
+
+@{
+    ViewBag.Title = "Game requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "MyRequests")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HandicapStones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompensationPoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationTimestamp)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author, "Player")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoardSize.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HandicapStones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompensationPoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationTimestamp)
+            </td>
+            <td>
+                @Html.ActionLink("Play", "Join", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

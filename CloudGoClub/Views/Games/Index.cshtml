@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CloudGoClub.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Start a new game", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GameRequest.BoardSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlackPlayer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhitePlayer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Moves)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameRequest.BoardSize.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlackPlayer, "Player")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhitePlayer, "Player")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moves)
+        </td>
+        <td>
+            @Html.ActionLink("View", "Details", new { id=item.GameRequestId })
+        </td>
+    </tr>
+}
+
+</table>

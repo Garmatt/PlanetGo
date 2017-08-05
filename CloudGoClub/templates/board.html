@@ -1,0 +1,9 @@
+﻿<table class="goban playable" cellspacing="0">
+    <tbody>
+        <tr ng-repeat="y in GetIndices() track by $index">
+            <td ng-repeat="x in GetIndices() track by $index">
+                <board-point point="Board.GetPoint($index, size - 1 - $parent.$index)" ng-click="MakeMove($index, size - 1 - $parent.$index)"></board-point>
+            </td>
+        </tr>
+    </tbody>
+</table>

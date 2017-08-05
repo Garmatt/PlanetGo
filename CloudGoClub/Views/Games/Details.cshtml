@@ -1,0 +1,26 @@
+﻿@model CloudGoClub.Models.Game
+
+@{
+    ViewBag.Title = "Game - " + Model.BlackPlayer.UserName + " vs " + Model.WhitePlayer.UserName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.BlackPlayer, "Player") vs @Html.DisplayFor(model => model.WhitePlayer, "Player")</h2>
+
+<p>
+    @Html.ActionLink("Back to games list", "Index")
+</p>
+
+<div ng-app='gameEngine'>
+    <board size='@Model.GameRequest.BoardSize.X'></board>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/engine.js"></script>
+    <script src="~/Scripts/game_engine/game-module.js"></script>
+    <script src="~/Scripts/game_engine/board.js"></script>
+    <script src="~/Scripts/game_engine/board-point.js"></script>
+}
