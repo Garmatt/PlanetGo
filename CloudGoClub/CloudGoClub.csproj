@@ -179,37 +179,9 @@
     </Compile>
     <Compile Include="GoController.cs" />
     <Compile Include="Initializer.cs" />
-    <Compile Include="Migrations\201703251810472_Init.cs" />
-    <Compile Include="Migrations\201703251810472_Init.Designer.cs">
-      <DependentUpon>201703251810472_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261015368_Alpha.cs" />
-    <Compile Include="Migrations\201703261015368_Alpha.Designer.cs">
-      <DependentUpon>201703261015368_Alpha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261704522_Beta.cs" />
-    <Compile Include="Migrations\201703261704522_Beta.Designer.cs">
-      <DependentUpon>201703261704522_Beta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261707300_Gamma.cs" />
-    <Compile Include="Migrations\201703261707300_Gamma.Designer.cs">
-      <DependentUpon>201703261707300_Gamma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261712272_Delta.cs" />
-    <Compile Include="Migrations\201703261712272_Delta.Designer.cs">
-      <DependentUpon>201703261712272_Delta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261714466_Eta.cs" />
-    <Compile Include="Migrations\201703261714466_Eta.Designer.cs">
-      <DependentUpon>201703261714466_Eta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261716213_Jenna.cs" />
-    <Compile Include="Migrations\201703261716213_Jenna.Designer.cs">
-      <DependentUpon>201703261716213_Jenna.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704171231084_Carol.cs" />
-    <Compile Include="Migrations\201704171231084_Carol.Designer.cs">
-      <DependentUpon>201704171231084_Carol.cs</DependentUpon>
+    <Compile Include="Migrations\201708081209416_Blue.cs" />
+    <Compile Include="Migrations\201708081209416_Blue.Designer.cs">
+      <DependentUpon>201708081209416_Blue.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1090,29 +1062,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703251810472_Init.resx">
-      <DependentUpon>201703251810472_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261015368_Alpha.resx">
-      <DependentUpon>201703261015368_Alpha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261704522_Beta.resx">
-      <DependentUpon>201703261704522_Beta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261707300_Gamma.resx">
-      <DependentUpon>201703261707300_Gamma.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261712272_Delta.resx">
-      <DependentUpon>201703261712272_Delta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261714466_Eta.resx">
-      <DependentUpon>201703261714466_Eta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261716213_Jenna.resx">
-      <DependentUpon>201703261716213_Jenna.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704171231084_Carol.resx">
-      <DependentUpon>201704171231084_Carol.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708081209416_Blue.resx">
+      <DependentUpon>201708081209416_Blue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
