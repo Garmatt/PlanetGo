@@ -37,6 +37,17 @@ function Group(color) {
         thisGroup.Stones.push(point);
         var neighbors = point.GetNeighbors();
         var neighborsToAdd = [];
+        var neighborToRemove = null;
+        for (let p = 0; p < thisGroup.NeighboringPoints.length; p++) {
+            let np = thisGroup.NeighboringPoints[p];
+            if (np.X == point.X && np.Y == point.Y) {
+                neighborToRemove = np;
+                break;
+            }
+        }
+        if (neighborToRemove) {
+            thisGroup.NeighboringPoints.splice(thisGroup.NeighboringPoints.indexOf(neighborToRemove), 1);
+        }
         for (let n = 0; n < neighbors.length; n++)
         {
             let neighbor = neighbors[n];
@@ -45,6 +56,12 @@ function Group(color) {
             {
                 let liberty = thisGroup.NeighboringPoints[l];
                 if (neighbor.X == liberty.X && neighbor.Y == liberty.Y)
+                    alreadyThere = true;
+            }
+            for (let s = 0; s < thisGroup.Stones.length; s++)            
+            {
+                let stone = thisGroup.Stones[s];
+                if (neighbor.X == stone.X && neighbor.Y == stone.Y)
                     alreadyThere = true;
             }
             if (!alreadyThere)
