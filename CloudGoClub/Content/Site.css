@@ -32,7 +32,6 @@ body {
 footer {
     margin-top: 3rem;
     padding: 3rem 3rem 3rem 3rem;
-    /*border-top: 2px solid #070300;*/
     background-color: rgba(0,0,0,0.3);
     border-radius: 3rem 3rem 0rem 0rem;
 }
@@ -45,21 +44,24 @@ footer {
     border: none;
     text-align: justify;
     text-align-last:justify;
-    /*background-color: rgba(0,0,0,0.6);*/
 }
 
-/*.divider {
-    border: 1px solid #ce9917;
-}*/
-
-ul.navbar-nav, .navbar-header {
-    background: rgba(0,0,0,0.3);
+.navbar-brand img {
+    max-height:3rem;
 }
 
 ul.navbar-nav {
-    margin:1rem 1rem;
-    padding:2rem 0rem;
-    border-radius:3rem;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.navbar-header {
+    background-color:#000000;
+}
+
+ul.navbar-nav {
+    margin: 1rem 3rem 0rem 1rem;
+    padding: 2rem 0rem;
+    border-radius: 3rem;
 }
 
     ul.navbar-nav li {
@@ -72,17 +74,11 @@ ul.navbar-nav {
     text-transform: uppercase;
     color: #FFFFFF;
     font-size: 1.6rem;
-    /*border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;*/
-    /*border-right: 1rem solid transparent;*/
-    /*border-left: 1rem solid transparent;*/
 }
 
         .navbar-default .navbar-nav li a:hover {
             color: red;
             transition: linear 0.15s;
-            /*border-top: 1px solid #ce9917;
-            border-bottom: 1px solid #ce9917;*/
             border-color:red;
         }
 
@@ -99,7 +95,7 @@ ul.navbar-nav {
     }
 
 .logo {
-    margin: 3rem 1rem;
+    margin: 3rem 3rem 3rem 1rem;
     background: #000000;
     padding: 1rem;
     border-radius: 3rem;
@@ -121,7 +117,7 @@ table.goban {
     border:3px inset #b18201;
 }
 
-    table.goban, table.goban * {
+    table.goban * {
         border:0;
         margin:0;
         padding:0;

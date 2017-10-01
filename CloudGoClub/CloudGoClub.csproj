@@ -203,6 +203,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Pictures\planet-go-logo.png" />
+    <Content Include="Pictures\planet-go.png" />
     <Content Include="Pictures\point-bottom-left.jpg" />
     <Content Include="Pictures\point-bottom-right.jpg" />
     <Content Include="Pictures\point-top-left.jpg" />
