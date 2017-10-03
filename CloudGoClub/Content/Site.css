@@ -5,39 +5,43 @@
     white-space: normal;
 }
 
-html, body, #layoutContainer, #layoutRow, #layoutMainCol {
+html, body {
     height: 100%;
     min-height: 100%;
 }
 
 body {
-    color: #070300;
-    background-color: #e8ead5;
     background-image: url('purty_wood_@2X.png');
-    background-repeat:repeat;
+    background-repeat: repeat;
 }
 
-#layoutMainCol {
-    padding: 3rem 3rem 0rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+#header {
+    width: 100%;
+    padding: 2rem;
+    background-color: #000000;
+    background: -moz-linear-gradient(top, #000000 0%, #130f1e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #000000 0%,#130f1e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #000000 0%,#130f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#130f1e',GradientType=0 );
+    border-bottom: 2px ridge #b18201;
 }
 
-#layoutMainCol, #layoutNavCol {
-    margin: 0rem;
-    border: 0rem;
+.logo img {
+    height:8rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-footer {
-    margin-top: 3rem;
-    padding: 3rem 3rem 3rem 3rem;
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 3rem 3rem 0rem 0rem;
+#layoutContainer {
+    padding-top: 3rem;
 }
 
-#layoutNavCol {
-    padding: 0rem;
+main {
+    padding: 2rem 2.5rem;
+    text-align: justify;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 1rem;
+    /*border: 1px inset #b18201;*/
 }
 
 .navbar {
@@ -46,41 +50,52 @@ footer {
     text-align-last:justify;
 }
 
-.navbar-brand img {
-    max-height:3rem;
+footer {
+    padding: 2rem 2.5rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    margin-right: 1rem;
 }
+
+/*.navbar-brand img {
+    max-height: 3rem;
+}*/
+
+/*.navbar-brand.hidden-xs img {
+    max-height: 6rem;
+}*/
 
 ul.navbar-nav {
     background-color: rgba(0,0,0,0.3);
 }
 
-.navbar-header {
+/*.navbar-header {
     background-color:#000000;
-}
+}*/
 
 ul.navbar-nav {
-    margin: 1rem 3rem 0rem 1rem;
-    padding: 2rem 0rem;
-    border-radius: 3rem;
+    /*margin: 1rem 3rem 0rem 1rem;
+    padding: 2rem 0rem;*/
+    border-radius: 1rem;
 }
 
-    ul.navbar-nav li {
+/*ul.navbar-nav li {
         margin:0rem 1rem;
-    }
+    }*/
 
 .navbar-default .navbar-nav li a {
     background: inherit;
     font-weight: bold;
     text-transform: uppercase;
     color: #FFFFFF;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
-        .navbar-default .navbar-nav li a:hover {
-            color: red;
-            transition: linear 0.15s;
-            border-color:red;
-        }
+    .navbar-default .navbar-nav li a:hover {
+        color: red;
+        transition: linear 0.15s;
+        border-color: red;
+    }
 
 .navbar-default .navbar-nav .active a {
     background: inherit;
@@ -89,63 +104,61 @@ ul.navbar-nav {
 }
 
     .navbar-default .navbar-nav .active a:hover {
-        background:inherit;
-        color:red;
-        transition:linear 0.2s;
+        background: inherit;
+        color: red;
+        transition: linear 0.05s;
     }
 
-.logo {
-    margin: 3rem 3rem 3rem 1rem;
-    background: #000000;
-    padding: 1rem;
-    border-radius: 3rem;
-}
-
 .glyphicon::before {
-    padding-right:0.5rem;
-    font-size:1.5rem;
-    left:0;
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    left: 0;
 }
 
-.navbar {
+.navbar-default {
     background-color:transparent;
 }
 
 table.goban {
-    border-spacing:0;
+    border-spacing: 0;
     border-collapse: collapse;
-    border:3px inset #b18201;
+    border: 3px inset #b18201;
 }
 
     table.goban * {
-        border:0;
-        margin:0;
-        padding:0;
+        border: 0;
+        margin: 0;
+        padding: 0;
     }
-    
-    .tile {
-        position: relative;
-    }
-.tile img {
-    z-index:0;
-}
-.stone {
-    position:absolute;
-    z-index:1;
-    top:0;
-    left:0;
-}
-.tile.empty .stone {
-    visibility:hidden;
-}
-table.playable .tile.empty:hover .stone {
-    visibility:visible;
-}
-table.playable .tile.empty:hover .stone img {
-    opacity: 0.5;
+
+.tile {
+    position: relative;
 }
 
-/* make sidebar nav vertical */ 
+    .tile img {
+        z-index: 0;
+    }
+
+.stone {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.tile.empty .stone {
+    visibility: hidden;
+}
+
+table.playable .tile.empty:hover .stone {
+    visibility: visible;
+}
+
+    table.playable .tile.empty:hover .stone img {
+        opacity: 0.5;
+    }
+
+/* make sidebar nav vertical */
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
