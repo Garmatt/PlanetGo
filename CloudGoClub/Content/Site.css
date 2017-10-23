@@ -11,18 +11,15 @@ html, body {
 }
 
 body {
-    background-image: url('purty_wood_@2X.png');
-    background-repeat: repeat;
+    /*background-image: url('purty_wood_@2X.png');
+    background-repeat: repeat;*/
+    background-color: #FFFFFF;
 }
 
 #header {
     width: 100%;
     padding: 2rem;
     background-color: #000000;
-    background: -moz-linear-gradient(top, #000000 0%, #130f1e 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #000000 0%,#130f1e 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #000000 0%,#130f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#130f1e',GradientType=0 );
     border-bottom: 2px ridge #b18201;
 }
 
@@ -37,11 +34,8 @@ body {
 }
 
 main {
-    padding: 2rem 2.5rem;
+    padding: 0rem 2.5rem;
     text-align: justify;
-    background-color: rgba(255,255,255,0.4);
-    border-radius: 1rem;
-    /*border: 1px inset #b18201;*/
 }
 
 .navbar {
@@ -51,55 +45,41 @@ main {
 }
 
 footer {
-    padding: 2rem 2.5rem;
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 1rem;
-    margin-right: 1rem;
-}
-
-/*.navbar-brand img {
-    max-height: 3rem;
-}*/
-
-/*.navbar-brand.hidden-xs img {
-    max-height: 6rem;
-}*/
-
-ul.navbar-nav {
-    background-color: rgba(0,0,0,0.3);
+    border-left: 1px solid #000000;
+    padding-left: 15px;
 }
 
 /*.navbar-header {
     background-color:#000000;
 }*/
 
-ul.navbar-nav {
-    /*margin: 1rem 3rem 0rem 1rem;
-    padding: 2rem 0rem;*/
-    border-radius: 1rem;
-}
+ul.navbar-nav li {
+    width:100%;
+    border-right: 1px solid #000000;
+    }
 
-/*ul.navbar-nav li {
-        margin:0rem 1rem;
-    }*/
+    ul.navbar-nav li:hover {
+        border-color: red;
+        transition: linear 0.1s;
+    }
 
 .navbar-default .navbar-nav li a {
     background: inherit;
     font-weight: bold;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 1.4rem;
 }
 
     .navbar-default .navbar-nav li a:hover {
         color: red;
-        transition: linear 0.15s;
+        transition: linear 0.1s;
         border-color: red;
     }
 
 .navbar-default .navbar-nav .active a {
     background: inherit;
-    border: none;
+    /*border: none;*/
     color: #FFFFFF;
 }
 
@@ -110,7 +90,7 @@ ul.navbar-nav {
     }
 
 .glyphicon::before {
-    padding-right: 0.5rem;
+    /*padding-right: 0.5rem;*/
     font-size: 1.5rem;
     left: 0;
 }

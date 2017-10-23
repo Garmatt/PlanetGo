@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<CloudGoClub.Models.Game>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ongoing games";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Start a new game", "Create")
