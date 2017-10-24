@@ -2,19 +2,16 @@ namespace CloudGoClub.Migrations
 {
     using CloudGoClub.Models;
     using Microsoft.AspNet.Identity;
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CloudGoClub.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(CloudGoClub.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             context.RuleSets.AddOrUpdate(rs => rs.Id, new RuleSet { Id = 0 });
             context.SaveChanges();

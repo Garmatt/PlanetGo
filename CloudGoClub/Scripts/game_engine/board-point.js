@@ -10,36 +10,36 @@
                 var size = board.Size;
                 var result = 'point';
 
-                if (y == 1)
+                if (y === 1)
                     result += '-bottom';
-                else if (y == size)
+                else if (y === size)
                     result += '-top';
 
-                if (x == 1)
+                if (x === 1)
                     result += '-left';
-                else if (x == size)
+                else if (x === size)
                     result += '-right';
 
-                if (result != 'point')
+                if (result !== 'point')
                     return result;
 
                 var cornerStarLocation = 3;
                 if (board.IsSizeLarge)
                     cornerStarLocation = 4;
 
-                if ((x == cornerStarLocation || x == size - cornerStarLocation + 1) && (y == cornerStarLocation || y == size - cornerStarLocation + 1))
+                if ((x === cornerStarLocation || x === size - cornerStarLocation + 1) && (y === cornerStarLocation || y === size - cornerStarLocation + 1))
                     return result + '-star';
 
                 if (board.IsSizeOdd)
                 {
                     var sideStarLocation = (size + 1) / 2;
-                    if (x == sideStarLocation && y == sideStarLocation)
+                    if (x === sideStarLocation && y === sideStarLocation)
                         return result + '-star';
 
                     if (board.IsSizeLarge)
                     {
-                        if (((x == cornerStarLocation || x == size - cornerStarLocation + 1) && y == sideStarLocation)
-                            || ((y == cornerStarLocation || y == size - cornerStarLocation + 1) && x == sideStarLocation))
+                        if (((x === cornerStarLocation || x === size - cornerStarLocation + 1) && y === sideStarLocation)
+                            || ((y === cornerStarLocation || y === size - cornerStarLocation + 1) && x === sideStarLocation))
                             return result + '-star';
                     }
                 }
@@ -59,15 +59,17 @@
                     scope.stone = 'stone-' + newValue;
             });
 
-            scope.$watch('point.Group', function (newValue, oldValue) {
+            scope.$watch('point.Group.Board', function (newValue, oldValue) {
+                //if (!oldValue && newValue && newValue.Board) {
                 if (newValue) {
                     scope.tileClass = 'tile';
-                    scope.stone = 'stone-' + newValue.Color;
+                    scope.stone = 'stone-' + scope.point.Group.Color; //newValue.Color;
                 }
+                //else if (oldValue && newValue === oldValue && !newValue.Board) {
                 else {
                     scope.tileClass = ['tile', 'empty'];
-                    if (scope.point.Board.NextToPlay)
-                        scope.stone = 'stone-' + scope.point.Board.NextToPlay;
+                    //if (scope.point.Board.NextToPlay)
+                    //    scope.stone = 'stone-' + scope.point.Board.NextToPlay;
                 }
             });
 

@@ -5,132 +5,140 @@
     white-space: normal;
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-.container {
-    padding:0px;
-}
-
 html, body {
-    background-color:#000000;
-    color:#FFFFFF;
-    padding:0px !important;
-    margin:0px !important;
-    height:100% !important;
+    height: 100%;
+    min-height: 100%;
 }
 
-/*main {
-    width:100%;
-}*/
+body {
+    /*background-image: url('purty_wood_@2X.png');
+    background-repeat: repeat;*/
+    background-color: #FFFFFF;
+}
 
-#layoutContainer, #layoutRow, #layoutMainCol, #layoutNavCol, main {
-    height:100%;
-    min-height:100%;
-    margin:0px;
-    padding:0px;
+#header {
+    width: 100%;
+    padding: 2rem;
+    background-color: #000000;
+    border-bottom: 2px ridge #b18201;
+}
+
+.logo img {
+    height:8rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #layoutContainer {
-    max-width:100%;
-    width:100%;
+    padding-top: 3rem;
 }
 
-#layoutMainCol {
-    /*color:#000000;
-    background-color:#FFFFFF;*/
-    padding-left:4rem;
-    padding-right:4rem;
-    padding-top:4rem;
-}
-
-#layoutNavCol {
-    padding-left:4rem;
-    padding-right:4rem;
-    margin-right:0px;
-    /*border-left:2px #ce9917 solid;
-    -webkit-box-shadow: -4px 0px 12px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -4px 0px 12px 0px rgba(0,0,0,0.75);
-    box-shadow: -4px 0px 12px 0px rgba(0,0,0,0.75);*/
-}
-
-
-.navbar-default {
-    background-color:inherit;
+main {
+    padding: 0rem 2.5rem;
+    text-align: justify;
 }
 
 .navbar {
-    border:none;
-    text-align:center;
+    border: none;
+    text-align: justify;
+    text-align-last:justify;
 }
+
+footer {
+    border-left: 1px solid #000000;
+    padding-left: 15px;
+}
+
+/*.navbar-header {
+    background-color:#000000;
+}*/
+
+ul.navbar-nav li {
+    width:100%;
+    border-right: 1px solid #000000;
+    }
+
+    ul.navbar-nav li:hover {
+        border-color: red;
+        transition: linear 0.1s;
+    }
 
 .navbar-default .navbar-nav li a {
-    font-weight:bold;
-    color:#FFFFFF;
-    font-size:1.6rem;
+    background: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 1.4rem;
 }
 
-.navbar-default .navbar-nav li a:hover {
-        color:red;
-        font-size:2rem;
-        transition:linear 0.2s;
+    .navbar-default .navbar-nav li a:hover {
+        color: red;
+        transition: linear 0.1s;
+        border-color: red;
     }
 
 .navbar-default .navbar-nav .active a {
-    background:inherit;
-    border:none;
-    color:#FFFFFF;
+    background: inherit;
+    /*border: none;*/
+    color: #FFFFFF;
 }
 
     .navbar-default .navbar-nav .active a:hover {
-        background:inherit;
-        color:red;
-        font-size:2rem;
-        transition:linear 0.2s;
+        background: inherit;
+        color: red;
+        transition: linear 0.05s;
     }
 
-.logo {
-    padding-top:4rem;
-    padding-bottom:4rem;
+.glyphicon::before {
+    /*padding-right: 0.5rem;*/
+    font-size: 1.5rem;
+    left: 0;
+}
+
+.navbar-default {
+    background-color:transparent;
 }
 
 table.goban {
-    border-spacing:0;
+    border-spacing: 0;
     border-collapse: collapse;
-    border:3px inset #b18201;
+    border: 3px inset #b18201;
 }
+
+    table.goban * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
 .tile {
-    position:relative;
+    position: relative;
 }
-.tile img {
-    z-index:0;
-}
+
+    .tile img {
+        z-index: 0;
+    }
+
 .stone {
-    position:absolute;
-    z-index:1;
-    top:0;
-    left:0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
+
 .tile.empty .stone {
-    visibility:hidden;
+    visibility: hidden;
 }
+
 table.playable .tile.empty:hover .stone {
-    visibility:visible;
-}
-table.playable .tile.empty:hover .stone img {
-    opacity: 0.5;
+    visibility: visible;
 }
 
+    table.playable .tile.empty:hover .stone img {
+        opacity: 0.5;
+    }
 
-
-
-/* make sidebar nav vertical */ 
+/* make sidebar nav vertical */
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
