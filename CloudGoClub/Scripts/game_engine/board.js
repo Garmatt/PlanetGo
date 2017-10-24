@@ -13,32 +13,42 @@
         },
         controller: ['$scope', function BoardController($scope) {
             $scope.MakeMove = function (x, y) {
+                console.log('-------------');
                 var selectedPoint = $scope.Board.GetPoint(x, y);
                 if (selectedPoint.Group) {
                     return;
                 }
                 var color = $scope.Board.NextToPlay;
+                console.log('Playing ' + selectedPoint + ' ' + color);
                 var neighbors = selectedPoint.GetNeighbors();
-                var neighboringGroupsOfOppositeColor = neighbors.map(function (neighbor) {
-                    if (neighbor.Group && neighbor.Group.Color !== color) {
-                        return neighbor.Group;
-                    }
-                }).unique();
-                var isMoveLegal = neighboringGroupsOfOppositeColor.some(function (val) { return val && val.GetLiberties() <= 1; });
+                var neighboringGroupsOfOppositeColor = neighbors.filter(function (neighbor) {
+                    return neighbor.Group && neighbor.Group.Color !== color;
+                }).map(function (neighbor) {
+                    return neighbor.Group;
+                    }).unique();
+                console.log('Neighboring groups of opposite color: ' + neighboringGroupsOfOppositeColor.join('; '));
+                var isMoveLegal = neighboringGroupsOfOppositeColor.some(function (group) { return group.GetLiberties() <= 1; });
                 var newGroup = new Group(color);
-                newGroup.AddStone(selectedPoint);
-                var neighboringGroupsOfSameColor = neighbors.map(function (neighbor) {
-                    if (neighbor.Group && neighbor.Group.Color === color) {
-                        return neighbor.Group;
-                    }
+                newGroup.AddStone(selectedPoint, true);
+                console.log('New group: ' + newGroup);
+                var neighboringGroupsOfSameColor = neighbors.filter(function (neighbor) {
+                    return neighbor.Group && neighbor.Group.Color === color;
+                }).map(function (neighbor) {
+                    return neighbor.Group;
                 }).unique();
+                console.log('Neighboring groups of same color: ' + neighboringGroupsOfSameColor.join('; '));
                 neighboringGroupsOfSameColor.push(newGroup);
-                newGroup = $scope.Board.GetConnectedGroup(neighboringGroupsOfSameColor);
-                isMoveLegal = isMoveLegal || (newGroup.GetLiberties() > 0);
+                var connectedGroup = $scope.Board.GetConnectedGroup(neighboringGroupsOfSameColor);
+                console.log('Connected group: ' + connectedGroup);
+                isMoveLegal = isMoveLegal || (connectedGroup.GetLiberties() > 0);
                 if (!isMoveLegal) {
                     return;
                 }
-                $scope.Board.AddGroup(newGroup);
+                neighboringGroupsOfSameColor.forEach(function (groupToRemove) {
+                    $scope.Board.RemoveGroup(groupToRemove);
+                });
+                $scope.Board.AddGroup(connectedGroup);
+                console.log('Added group: ' + connectedGroup);
                 neighboringGroupsOfOppositeColor.forEach(function (groupToCheckRemove) {
                     if (groupToCheckRemove.GetLiberties() < 1) {
                         $scope.Board.RemoveGroup(groupToCheckRemove);
@@ -50,6 +60,7 @@
                 else {
                     $scope.Board.NextToPlay = 'black';
                 }
+                console.log(' ');
             };
         }],
         //templateUrl: '/templates/board.html'

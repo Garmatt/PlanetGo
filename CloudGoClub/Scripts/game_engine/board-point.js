@@ -59,15 +59,17 @@
                     scope.stone = 'stone-' + newValue;
             });
 
-            scope.$watch('point.Group', function (newValue, oldValue) {
+            scope.$watch('point.Group.Board', function (newValue, oldValue) {
+                //if (!oldValue && newValue && newValue.Board) {
                 if (newValue) {
                     scope.tileClass = 'tile';
-                    scope.stone = 'stone-' + newValue.Color;
+                    scope.stone = 'stone-' + scope.point.Group.Color; //newValue.Color;
                 }
+                //else if (oldValue && newValue === oldValue && !newValue.Board) {
                 else {
                     scope.tileClass = ['tile', 'empty'];
-                    if (scope.point.Board.NextToPlay)
-                        scope.stone = 'stone-' + scope.point.Board.NextToPlay;
+                    //if (scope.point.Board.NextToPlay)
+                    //    scope.stone = 'stone-' + scope.point.Board.NextToPlay;
                 }
             });
 
