@@ -42,6 +42,7 @@
                 console.log('Connected group: ' + connectedGroup);
                 isMoveLegal = isMoveLegal || (connectedGroup.GetLiberties() > 0);
                 if (!isMoveLegal) {
+                    selectedPoint.Group = null;
                     return;
                 }
                 neighboringGroupsOfSameColor.forEach(function (groupToRemove) {
