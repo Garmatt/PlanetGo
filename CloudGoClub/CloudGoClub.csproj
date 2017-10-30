@@ -259,10 +259,15 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\engine.js" />
-    <Content Include="Scripts\game_engine\board-point.js" />
-    <Content Include="Scripts\game_engine\board.js" />
-    <Content Include="Scripts\game_engine\game-module.js" />
+    <Content Include="Scripts\Game\Board.js" />
+    <Content Include="Scripts\Game\AdditionalMethods.js" />
+    <Content Include="Scripts\Game\angular\board-point.js" />
+    <Content Include="Scripts\Game\angular\board.js" />
+    <Content Include="Scripts\Game\angular\game-module.js" />
+    <Content Include="Scripts\Game\Color.js" />
+    <Content Include="Scripts\Game\Group.js" />
+    <Content Include="Scripts\Game\Move.js" />
+    <Content Include="Scripts\Game\Point.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -1000,12 +1005,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Polyfills.js" />
+    <Content Include="Scripts\Game\Polyfills.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="templates\board-point.html" />
-    <Content Include="templates\board.html" />
+    <Content Include="Scripts\Game\angular\templates\board-point.html" />
+    <Content Include="Scripts\Game\angular\templates\board.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

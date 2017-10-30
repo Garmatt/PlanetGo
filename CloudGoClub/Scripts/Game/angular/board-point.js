@@ -60,22 +60,18 @@
             });
 
             scope.$watch('point.Group.Board', function (newValue, oldValue) {
-                //if (!oldValue && newValue && newValue.Board) {
                 if (newValue) {
                     scope.tileClass = 'tile';
-                    scope.stone = 'stone-' + scope.point.Group.Color; //newValue.Color;
+                    scope.stone = 'stone-' + scope.point.Group.Color;
                 }
-                //else if (oldValue && newValue === oldValue && !newValue.Board) {
                 else {
                     scope.tileClass = ['tile', 'empty'];
-                    //if (scope.point.Board.NextToPlay)
-                    //    scope.stone = 'stone-' + scope.point.Board.NextToPlay;
                 }
             });
 
         },
-        //templateUrl: '/templates/board-point.html'
-        template: "<div ng-class='tileClass'><img ng-src='/Pictures/{{background}}.jpg' /><div class='stone'><img ng-src='/Pictures/{{stone}}.png' /></div></div>"
+        templateUrl: '/Scripts/Game/angular/templates/board-point.html'
+        //template: "<div ng-class='tileClass'><img ng-src='/Pictures/{{background}}.jpg' /><div class='stone'><img ng-src='/Pictures/{{stone}}.png' /></div></div>"
     };
 });
 

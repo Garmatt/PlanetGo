@@ -6,9 +6,19 @@
         },
         link: function (scope) {
             scope.Board = new Board(scope.size);
-            scope.Board.NextToPlay = 'black';
+            scope.Board.NextToPlay = Color.Black;
             scope.GetIndices = function () {
                 return new Array(scope.size);
+            };
+            scope.GameHistory = [];
+            scope.MoveIndex = -1;
+            scope.StepForward = function () {
+                scope.GameHistory[++scope.MoveIndex].Do();
+                //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
+            };
+            scope.StepBackward = function () {
+                scope.GameHistory[scope.MoveIndex--].Undo();
+                //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
             };
         },
         controller: ['$scope', function BoardController($scope) {
@@ -37,22 +47,22 @@
                     return neighbor.Group;
                 }).unique();
                 console.log('Neighboring groups of same color: ' + neighboringGroupsOfSameColor.join('; '));
-                neighboringGroupsOfSameColor.push(newGroup);
-                var connectedGroup = $scope.Board.GetConnectedGroup(neighboringGroupsOfSameColor);
+                var connectedGroup = $scope.Board.GetConnectedGroup(neighboringGroupsOfSameColor.concat([newGroup]));
                 console.log('Connected group: ' + connectedGroup);
                 isMoveLegal = isMoveLegal || (connectedGroup.GetLiberties() > 0);
                 if (!isMoveLegal) {
                     selectedPoint.Group = null;
                     return;
                 }
+                var move = new Move($scope.Board, color, selectedPoint);
                 neighboringGroupsOfSameColor.forEach(function (groupToRemove) {
-                    $scope.Board.RemoveGroup(groupToRemove);
+                    $scope.Board.RemoveGroup(groupToRemove, move);
                 });
-                $scope.Board.AddGroup(connectedGroup);
+                $scope.Board.AddGroup(connectedGroup, move);
                 console.log('Added group: ' + connectedGroup);
                 neighboringGroupsOfOppositeColor.forEach(function (groupToCheckRemove) {
                     if (groupToCheckRemove.GetLiberties() < 1) {
-                        $scope.Board.RemoveGroup(groupToCheckRemove);
+                        $scope.Board.RemoveGroup(groupToCheckRemove, move);
                     }
                 });
                 if (color === 'black') {
@@ -62,10 +72,13 @@
                     $scope.Board.NextToPlay = 'black';
                 }
                 console.log(' ');
+                $scope.Board.SelectedPoint = selectedPoint;
+                $scope.GameHistory.push(move);
+                $scope.MoveIndex++;
             };
         }],
-        //templateUrl: '/templates/board.html'
-        template: "<table class='goban playable' cellspacing='0'><tbody><tr ng-repeat='y in GetIndices() track by $index'><td ng-repeat='x in GetIndices() track by $index'><board-point point='Board.GetPoint($index, size - 1 - $parent.$index)' ng-click='MakeMove($index, size - 1 - $parent.$index)'></board-point></td></tr></tbody></table>"
+        templateUrl: '/Scripts/Game/angular/templates/board.html'
+        //template: "<table class='goban playable' cellspacing='0'><tbody><tr ng-repeat='y in GetIndices() track by $index'><td ng-repeat='x in GetIndices() track by $index'><board-point point='Board.GetPoint($index, size - 1 - $parent.$index)' ng-click='MakeMove($index, size - 1 - $parent.$index)'></board-point></td></tr></tbody></table>"
     };
 });
 
