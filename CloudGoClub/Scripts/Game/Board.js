@@ -71,5 +71,5 @@ Board.prototype.GetConnectedGroup = function (groups) {
 };
 
 Board.prototype.ToggleColor = function () {
-
+    this.NextToPlay = this.NextToPlay.GetOppositeColor();
 }

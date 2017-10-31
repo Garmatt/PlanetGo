@@ -14,10 +14,12 @@
             scope.MoveIndex = -1;
             scope.StepForward = function () {
                 scope.GameHistory[++scope.MoveIndex].Do();
+                scope.Board.ToggleColor();
                 //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
             };
             scope.StepBackward = function () {
                 scope.GameHistory[scope.MoveIndex--].Undo();
+                scope.Board.ToggleColor();
                 //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
             };
         },
@@ -65,12 +67,7 @@
                         $scope.Board.RemoveGroup(groupToCheckRemove, move);
                     }
                 });
-                if (color === 'black') {
-                    $scope.Board.NextToPlay = 'white';
-                }
-                else {
-                    $scope.Board.NextToPlay = 'black';
-                }
+                $scope.Board.ToggleColor();
                 console.log(' ');
                 $scope.Board.SelectedPoint = selectedPoint;
                 $scope.GameHistory.push(move);
