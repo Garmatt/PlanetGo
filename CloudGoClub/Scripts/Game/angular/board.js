@@ -70,8 +70,8 @@
                 $scope.Board.ToggleColor();
                 console.log(' ');
                 $scope.Board.SelectedPoint = selectedPoint;
-                $scope.GameHistory.push(move);
                 $scope.MoveIndex++;
+                $scope.GameHistory.splice($scope.MoveIndex, $scope.GameHistory.length - $scope.MoveIndex, move);
             };
         }],
         templateUrl: '/Scripts/Game/angular/templates/board.html'
