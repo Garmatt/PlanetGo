@@ -1,18 +1,22 @@
 ﻿@using CloudGoClub.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
 }
 
-<h2>@ViewBag.Title.</h2>
+
+Welcome to PlanetGO, the free online platform connecting go players from all over the world.<br />
+Join our ever-growing community and start playing now! Whether you’re an absolute beginner or a 9 dan pro, you will find a matching opponent in a few clicks.
+PlanetGO is 100% free and does not require installing any software: all you need is an internet connection and a valid email account.
+
+
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })

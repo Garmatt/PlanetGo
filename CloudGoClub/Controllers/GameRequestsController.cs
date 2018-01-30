@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace CloudGoClub.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class GameRequestsController : GoController
     {
         public GameRequestsController()
@@ -127,7 +127,7 @@ namespace CloudGoClub.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        //[Authorize]
         public ActionResult Create(
             CreateGameRequestViewModel viewModel
             //[Bind(Include = "Id,SgfString,BoardSizeId,BlackPlayerId,WhitePlayerId,BlackPlayerRankId,WhitePlayerRankId,CreatorId,CreationTimestamp,StartTimestamp,LastPlayedTimestamp,EndTimestamp,Moves,CompensationPoints,HandicapStones,Turn,GameResultId,TournamentId,Type")] Game game
