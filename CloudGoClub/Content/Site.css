@@ -99,20 +99,26 @@ ul.navbar-nav li {
     background-color:transparent;
 }
 
-table.goban {
-    border-spacing: 0;
-    border-collapse: collapse;
+div.board {
     border: 3px inset #b18201;
+    display: table;
+    white-space:nowrap;
 }
 
-    table.goban * {
+    div.board * {
         border: 0;
         margin: 0;
         padding: 0;
+        white-space: nowrap;
     }
+
+.board-row {
+    display:table-row;
+}
 
 .tile {
     position: relative;
+    display:table-cell;
 }
 
     .tile img {
@@ -130,11 +136,11 @@ table.goban {
     visibility: hidden;
 }
 
-table.playable .tile.empty:hover .stone {
+div.playable .tile.empty:hover .stone {
     visibility: visible;
 }
 
-    table.playable .tile.empty:hover .stone img {
+    div.playable .tile.empty:hover .stone img {
         opacity: 0.5;
     }
 

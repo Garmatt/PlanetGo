@@ -1,12 +1,8 @@
-﻿<table class="goban playable" cellspacing="0">
-    <tbody>
-        <tr ng-repeat="y in GetIndices() track by $index">
-            <td ng-repeat="x in GetIndices() track by $index">
-                <board-point point="Board.GetPoint($index, size - 1 - $parent.$index)" ng-click="MakeMove($index, size - 1 - $parent.$index)"></board-point>
-            </td>
-        </tr>
-    </tbody>
-</table>
+﻿<div class="board playable">
+    <div class="board-row" ng-repeat="y in GetIndices() track by $index">
+        <board-point ng-repeat="x in GetIndices() track by $index" point="Board.GetPoint($index, size - 1 - $parent.$index)" ng-click="MakeMove($index, size - 1 - $parent.$index)"></board-point>
+    </div>
+</div>
 <span class="glyphicon glyphicon-step-backward" ng-show="MoveIndex > -1" ng-click="StepBackward()"></span>
 <span class="glyphicon glyphicon-step-forward" ng-show="MoveIndex < GameHistory.length - 1" ng-click="StepForward()"></span>
 <div ng-show="MoveIndex >= 0">Move {{MoveIndex + 1}}</div>
