@@ -1,0 +1,51 @@
+﻿.board {
+    border: 0.2em groove #462700;
+    display: table;
+    white-space: nowrap;
+    background-image: url('purty_wood.png');
+    background-repeat: repeat;
+    background-size: contain;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:62.5%;
+}
+
+    .board * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+.board-row {
+    display: table-row;
+}
+
+.point {
+    position: relative;
+    display: table-cell;
+}
+
+    .point img {
+        z-index: 0;
+        /*width:8px;*/
+        /*height:8px;*/
+    }
+
+.stone {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.point.empty .stone {
+    visibility: hidden;
+}
+
+.board.playable .point.empty:hover .stone {
+    visibility: visible;
+}
+
+    .board.playable .point.empty:hover .stone img {
+        opacity: 0.5;
+    }

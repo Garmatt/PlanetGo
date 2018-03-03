@@ -195,25 +195,26 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\board.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\purty_wood_%402X.png" />
+    <Content Include="Content\purty_wood.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Pictures\planet-go-logo.png" />
     <Content Include="Pictures\planet-go.png" />
-    <Content Include="Pictures\point-bottom-left.jpg" />
-    <Content Include="Pictures\point-bottom-right.jpg" />
-    <Content Include="Pictures\point-top-left.jpg" />
-    <Content Include="Pictures\point-top-right.jpg" />
-    <Content Include="Pictures\point-bottom.jpg" />
-    <Content Include="Pictures\point-left.jpg" />
-    <Content Include="Pictures\point-right.jpg" />
-    <Content Include="Pictures\point-top.jpg" />
-    <Content Include="Pictures\point-star.jpg" />
-    <Content Include="Pictures\point.jpg" />
+    <Content Include="Pictures\point-bottom-left.png" />
+    <Content Include="Pictures\point-bottom-right.png" />
+    <Content Include="Pictures\point-bottom.png" />
+    <Content Include="Pictures\point-left.png" />
+    <Content Include="Pictures\point-right.png" />
+    <Content Include="Pictures\point-star.png" />
+    <Content Include="Pictures\point-top-left.png" />
+    <Content Include="Pictures\point-top-right.png" />
+    <Content Include="Pictures\point-top.png" />
+    <Content Include="Pictures\point.png" />
     <Content Include="Pictures\stone-black.png" />
     <Content Include="Pictures\stone-white.png" />
     <Content Include="Scripts\angular-animate.js" />

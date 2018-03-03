@@ -99,50 +99,7 @@ ul.navbar-nav li {
     background-color:transparent;
 }
 
-div.board {
-    border: 3px inset #b18201;
-    display: table;
-    white-space:nowrap;
-}
 
-    div.board * {
-        border: 0;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-    }
-
-.board-row {
-    display:table-row;
-}
-
-.tile {
-    position: relative;
-    display:table-cell;
-}
-
-    .tile img {
-        z-index: 0;
-    }
-
-.stone {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-}
-
-.tile.empty .stone {
-    visibility: hidden;
-}
-
-div.playable .tile.empty:hover .stone {
-    visibility: visible;
-}
-
-    div.playable .tile.empty:hover .stone img {
-        opacity: 0.5;
-    }
 
 /* make sidebar nav vertical */
 @media (min-width: 768px) {

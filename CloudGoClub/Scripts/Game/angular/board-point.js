@@ -47,7 +47,7 @@
                 return result;
             };
 
-            scope.tileClass = ['tile', 'empty'];
+            scope.pointClass = ['tile', 'empty'];
 
             if (scope.point.Board.NextToPlay)
                 scope.stone = 'stone-' + scope.point.Board.NextToPlay;
@@ -55,23 +55,23 @@
             scope.background = GetBackgroundSource(scope.point.X, scope.point.Y, scope.point.Board);
 
             scope.$watch('point.Board.NextToPlay', function (newValue, oldValue) {
-                if (newValue && $.inArray('empty', scope.tileClass) >= 0)
+                if (newValue && $.inArray('empty', scope.pointClass) >= 0)
                     scope.stone = 'stone-' + newValue;
             });
 
             scope.$watch('point.Group.Board', function (newValue, oldValue) {
                 if (newValue) {
-                    scope.tileClass = 'tile';
+                    scope.pointClass = 'point';
                     scope.stone = 'stone-' + scope.point.Group.Color;
                 }
                 else {
-                    scope.tileClass = ['tile', 'empty'];
+                    scope.pointClass = ['point', 'empty'];
                 }
             });
 
         },
         templateUrl: '/Scripts/Game/angular/templates/board-point.html'
-        //template: "<div ng-class='tileClass'><img ng-src='/Pictures/{{background}}.jpg' /><div class='stone'><img ng-src='/Pictures/{{stone}}.png' /></div></div>"
+        //template: "<div ng-class='pointClass'><img ng-src='/Pictures/{{background}}.jpg' /><div class='stone'><img ng-src='/Pictures/{{stone}}.png' /></div></div>"
     };
 });
 

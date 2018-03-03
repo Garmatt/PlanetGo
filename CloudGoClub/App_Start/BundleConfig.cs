@@ -25,7 +25,8 @@ namespace CloudGoClub
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/Site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/board.css"));
 
             //bundles.Add(new ScriptBundle("~/bundles/angular").Include(
             //         "~/Scripts/angular.js",
