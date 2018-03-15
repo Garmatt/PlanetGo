@@ -27,7 +27,7 @@
             $scope.MakeMove = function (x, y) {
                 console.log('-------------');
                 var selectedPoint = $scope.Board.GetPoint(x, y);
-                if (selectedPoint.Group) {
+                if (selectedPoint.Group || ($scope.Board.KoPoint != null && selectedPoint.Equals($scope.Board.KoPoint))) {
                     return;
                 }
                 var color = $scope.Board.NextToPlay;
@@ -51,7 +51,8 @@
                 console.log('Neighboring groups of same color: ' + neighboringGroupsOfSameColor.join('; '));
                 var connectedGroup = $scope.Board.GetConnectedGroup(neighboringGroupsOfSameColor.concat([newGroup]));
                 console.log('Connected group: ' + connectedGroup);
-                isMoveLegal = isMoveLegal || (connectedGroup.GetLiberties() > 0);
+                var connectedGroupLiberties = connectedGroup.GetLiberties();
+                isMoveLegal = isMoveLegal || (connectedGroupLiberties > 0);
                 if (!isMoveLegal) {
                     selectedPoint.Group = null;
                     return;
@@ -62,14 +63,22 @@
                 });
                 $scope.Board.AddGroup(connectedGroup, move);
                 console.log('Added group: ' + connectedGroup);
+                var lookForKo = connectedGroupLiberties === 1;
+                var koPoint = null;
                 neighboringGroupsOfOppositeColor.forEach(function (groupToCheckRemove) {
                     if (groupToCheckRemove.GetLiberties() < 1) {
+                        if (lookForKo && groupToCheckRemove.Stones.length === 1)
+                            koPoint = groupToCheckRemove.Stones[0];
+                        else
+                            koPoint = null;
                         $scope.Board.RemoveGroup(groupToCheckRemove, move);
+                        lookForKo = false;
                     }
                 });
                 $scope.Board.ToggleColor();
                 console.log(' ');
                 $scope.Board.SelectedPoint = selectedPoint;
+                $scope.Board.KoPoint = koPoint;
                 $scope.MoveIndex++;
                 $scope.GameHistory.splice($scope.MoveIndex, $scope.GameHistory.length - $scope.MoveIndex, move);
             };

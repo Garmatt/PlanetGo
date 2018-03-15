@@ -26,6 +26,7 @@
         }
         this.Points[i] = line;
     }
+    this.KoPoint = null;
 };
 
 Board.prototype.GetPoint = function (x, y) {
