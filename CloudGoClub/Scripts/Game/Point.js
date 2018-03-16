@@ -17,7 +17,7 @@ Point.prototype.GetNeighbors = function () {
 }
 
 Point.prototype.Equals = function (otherPoint) {
-    return this.X === otherPoint.X && this.Y === otherPoint.Y;
+    return otherPoint && this.X === otherPoint.X && this.Y === otherPoint.Y;
 }
 
 Point.prototype.toString = function () {

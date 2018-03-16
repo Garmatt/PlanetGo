@@ -69,6 +69,14 @@
                 }
             });
 
+            scope.$watch('point.Board.KoPoint', function (newValue, oldValue) {
+                if (scope.point.Equals(newValue))
+                    scope.background += '-ko';
+
+                if (scope.point.Equals(oldValue))
+                    scope.background = GetBackgroundSource(scope.point.X, scope.point.Y, scope.point.Board);
+            });
+
         },
         templateUrl: '/Scripts/Game/angular/templates/board-point.html'
         //template: "<div ng-class='pointClass'><img ng-src='/Pictures/{{background}}.jpg' /><div class='stone'><img ng-src='/Pictures/{{stone}}.png' /></div></div>"

@@ -27,7 +27,7 @@
             $scope.MakeMove = function (x, y) {
                 console.log('-------------');
                 var selectedPoint = $scope.Board.GetPoint(x, y);
-                if (selectedPoint.Group || ($scope.Board.KoPoint != null && selectedPoint.Equals($scope.Board.KoPoint))) {
+                if (selectedPoint.Group || selectedPoint.Equals($scope.Board.KoPoint)) {
                     return;
                 }
                 var color = $scope.Board.NextToPlay;
@@ -63,7 +63,7 @@
                 });
                 $scope.Board.AddGroup(connectedGroup, move);
                 console.log('Added group: ' + connectedGroup);
-                var lookForKo = connectedGroupLiberties === 1;
+                var lookForKo = connectedGroup.Stones.length === 1 && connectedGroupLiberties === 1;
                 var koPoint = null;
                 neighboringGroupsOfOppositeColor.forEach(function (groupToCheckRemove) {
                     if (groupToCheckRemove.GetLiberties() < 1) {
