@@ -5,9 +5,10 @@
     background-image: url('purty_wood.png');
     background-repeat: repeat;
     background-size: contain;
-    margin-left:auto;
-    margin-right:auto;
-    font-size:62.5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 62.5%;
+    padding: 1.5em;
 }
 
     .board * {

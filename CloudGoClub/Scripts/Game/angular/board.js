@@ -63,7 +63,7 @@
                 });
                 $scope.Board.AddGroup(connectedGroup, move);
                 console.log('Added group: ' + connectedGroup);
-                var lookForKo = connectedGroup.Stones.length === 1 && connectedGroupLiberties === 1;
+                var lookForKo = connectedGroup.Stones.length === 1 && connectedGroupLiberties === 0;
                 var koPoint = null;
                 neighboringGroupsOfOppositeColor.forEach(function (groupToCheckRemove) {
                     if (groupToCheckRemove.GetLiberties() < 1) {
