@@ -7,6 +7,7 @@
     this.OldGroups = [];
     this.Color = color;
     this.PlayedStone = playedStone;
+    this.KoPoint = null;
 };
 
 (function () {

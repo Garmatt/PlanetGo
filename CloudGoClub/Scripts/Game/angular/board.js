@@ -15,12 +15,14 @@
             scope.StepForward = function () {
                 scope.GameHistory[++scope.MoveIndex].Do();
                 scope.Board.ToggleColor();
-                //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
+                scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].PlayedStone;
+                scope.Board.KoPoint = scope.GameHistory[scope.MoveIndex].KoPoint;
             };
             scope.StepBackward = function () {
                 scope.GameHistory[scope.MoveIndex--].Undo();
                 scope.Board.ToggleColor();
-                //scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].SelectedPoint;
+                scope.Board.SelectedPoint = scope.GameHistory[scope.MoveIndex].PlayedStone;
+                scope.Board.KoPoint = scope.GameHistory[scope.MoveIndex].KoPoint;
             };
         },
         controller: ['$scope', function BoardController($scope) {
@@ -79,6 +81,7 @@
                 console.log(' ');
                 $scope.Board.SelectedPoint = selectedPoint;
                 $scope.Board.KoPoint = koPoint;
+                move.KoPoint = koPoint;
                 $scope.MoveIndex++;
                 $scope.GameHistory.splice($scope.MoveIndex, $scope.GameHistory.length - $scope.MoveIndex, move);
             };
