@@ -4,14 +4,13 @@
     ViewBag.Title = "Login";
 }
 
-
-Welcome to PlanetGO, the free online platform connecting go players from all over the world.<br />
-Join our ever-growing community and start playing now! Whether you’re an absolute beginner or a 9 dan pro, you will find a matching opponent in a few clicks.
-PlanetGO is 100% free and does not require installing any software: all you need is an internet connection and a valid email account.
-
+<div>    
+    <p>Welcome to PlanetGO, a free web platform connecting go players from all over the world.</p>
+    <p>If you enjoy playing go, join our ever-growing community and start playing now! Whether you are an absolute beginner or a 9 dan pro, you will find the opponent for you in a few clicks.</p>
+</div>
 
 <div class="row">
-    <div class="col-md-8">
+    <div> <!--class="col-md-8"-->
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -54,12 +53,14 @@ PlanetGO is 100% free and does not require installing any software: all you need
             }
         </section>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
-    </div>
+    </div>*@
 </div>
+
+<div>PlanetGO is 100% free and does not require installing any software: all you need is an internet connection and a valid email account.</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -13,7 +13,8 @@ html, body {
 body {
     /*background-image: url('purty_wood_@2X.png');
     background-repeat: repeat;*/
-    background-color: #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 #header {
@@ -100,6 +101,22 @@ ul.navbar-nav li {
 }
 
 
+main.unsigned {
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.unsigned-header {
+    text-align:center;
+    padding:4rem;
+}
+
+.unsigned-header img {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:260px;
+}
 
 /* make sidebar nav vertical */
 @media (min-width: 768px) {
