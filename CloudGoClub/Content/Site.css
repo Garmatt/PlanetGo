@@ -17,44 +17,44 @@ body {
     color: #FFFFFF;
 }
 
-#header {
+/*#header {
     width: 100%;
     padding: 2rem;
     background-color: #000000;
     border-bottom: 2px ridge #b18201;
-}
+}*/
 
 .logo img {
-    height:8rem;
+    height:2rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-#layoutContainer {
+/*#layoutContainer {
     padding-top: 3rem;
-}
+}*/
 
 main {
-    padding: 0rem 2.5rem;
+    padding: 2.5rem;
     text-align: justify;
 }
 
-.navbar {
+/*.navbar {
     border: none;
     text-align: justify;
     text-align-last:justify;
-}
+}*/
 
 footer {
-    border-left: 1px solid #000000;
-    padding-left: 15px;
+    border-top: 1px solid #000000;
+    padding-top: 2.5rem;
 }
 
 /*.navbar-header {
     background-color:#000000;
 }*/
 
-ul.navbar-nav li {
+/*ul.navbar-nav li {
     width:100%;
     border-right: 1px solid #000000;
     }
@@ -80,7 +80,6 @@ ul.navbar-nav li {
 
 .navbar-default .navbar-nav .active a {
     background: inherit;
-    /*border: none;*/
     color: #FFFFFF;
 }
 
@@ -88,7 +87,7 @@ ul.navbar-nav li {
         background: inherit;
         color: red;
         transition: linear 0.05s;
-    }
+    }*/
 
 .glyphicon::before {
     /*padding-right: 0.5rem;*/
@@ -96,9 +95,9 @@ ul.navbar-nav li {
     left: 0;
 }
 
-.navbar-default {
+/*.navbar-default {
     background-color:transparent;
-}
+}*/
 
 
 main.unsigned {
@@ -119,7 +118,7 @@ main.unsigned {
 }
 
 /* make sidebar nav vertical */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
     max-height: none;
@@ -138,4 +137,4 @@ main.unsigned {
     padding-top: 12px;
     padding-bottom: 12px;
   }
-}
+}*/
